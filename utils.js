@@ -9,7 +9,7 @@ const Utils = {
 
     oggi() {
 
-        const oggi = new Date();
+        const oggi = new Date(); 
 
         oggi.setHours(0,0,0,0);
 
