@@ -85,7 +85,7 @@ const Utils = {
 
     calcolaGiorni(dataString){
 
-        return this.giorniAllaScadenza(dataString);
+        return this.giorniAllaScadenza(dataString); 
 
     },
 
