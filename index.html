@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Scadenze Smart GDO</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- CARICAMENTO -->
+
+<div id="loading" style="display:none">
+    Caricamento...
+</div>
+
+<h1>Scadenze Smart GDO</h1>
+
+<div class="dashboard">
+
+    <div class="card scaduti">
+        ⚫ Scaduti
+    </div>
+
+    <div class="card g3">
+        🔴 Entro 3 giorni
+    </div>
+
+    <div class="card g7">
+        🟠 Entro 7 giorni
+    </div>
+
+    <div class="card g10">
+        🟡 Entro 10 giorni
+    </div>
+
+    <div class="card g15">
+        🟢 Entro 15 giorni
+    </div>
+
+    <div class="card offerta">
+        🔵 Offerta
+    </div>
+
+    <div class="card totale">
+        📦 Totale Referenze
+    </div>
+
+</div>
+
+<br>
+
+<label for="reparto"><strong>Reparto</strong></label>
+
+<select id="reparto">
+
+    <option value="macelleria">🥩 Macelleria</option>
+    <option value="gastronomia">🧀 Gastronomia</option>
+    <option value="pescheria">🐟 Pescheria</option>
+    <option value="ortofrutta">🥬 Ortofrutta</option>
+    <option value="latticini">🥛 Latticini</option>
+    <option value="panetteria">🍞 Panetteria</option>
+    <option value="pasticceria">🍰 Pasticceria</option>
+    <option value="drogheria">🍪 Drogheria</option>
+    <option value="surgelati">🧊 Surgelati</option>
+
+</select>
+
+<br><br>
+
+<input type="file" id="csvFile">
+
+<input
+id="ricerca"
+type="text"
+placeholder="Cerca prodotto">
+
+<button id="nuovaReferenza">
+
+➕ Nuova Referenza
+
+</button>
+
+<button id="esportaCategoria">
+
+📊 Esporta Categoria
+
+</button>
+
+<hr>
+
+<div id="contenuto">
+
+Nessun dato caricato
+
+</div>
+
+<!-- PAGINE -->
+
+<div id="home" class="pagina"></div>
+
+<div id="dashboard" class="pagina" style="display:none"></div>
+
+<div id="prodotti" class="pagina" style="display:none"></div>
+
+<div id="offerte" class="pagina" style="display:none"></div>
+
+<div id="documenti" class="pagina" style="display:none"></div>
+
+<div id="assistente" class="pagina" style="display:none"></div>
+
+<div id="impostazioni" class="pagina" style="display:none"></div>
+
+<!-- LIBRERIA SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<!-- CORE -->
+
+<script src="utils.js"></script>
+<script src="storage.js"></script>
+<script src="config.js"></script>
+<script src="sessione.js"></script>
+
+<!-- DATI -->
+
+<script src="prodotti.js"></script>
+<script src="scadenze.js"></script>
+<script src="offerte.js"></script>
+<script src="registro.js"></script>
+
+<!-- SERVIZI -->
+
+<script src="dashboard.js"></script>
+<script src="ricerca.js"></script>
+<script src="documenti.js"></script>
+<script src="notifiche.js"></script>
+<script src="csv.js"></script>
+<script src="supabase.js"></script>
+<script src="ai.js"></script>
+
+<!-- INTERFACCIA -->
+
+<script src="ui.js"></script>
+<script src="eventi.js"></script>
+
+<!-- AVVIO -->
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
