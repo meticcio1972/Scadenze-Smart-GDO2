@@ -103,3 +103,5 @@ const Utils = {
             Math.random().toString(36).substring(2,8);
 
     }
+    };
+    window.Utils = Utils;
