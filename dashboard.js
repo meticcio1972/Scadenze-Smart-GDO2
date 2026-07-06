@@ -62,7 +62,7 @@ const Dashboard = {
         document.querySelector(".g15").innerHTML =
             `🟢 Entro 15 giorni<br><strong>${totale}</strong>`;
 
-    }
+    },
     carica(lista = []) {
 
     if (!Array.isArray(lista)) {
