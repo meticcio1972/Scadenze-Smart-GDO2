@@ -14,7 +14,7 @@ const Dashboard = {
         this.aggiorna7Giorni();
         this.aggiorna10Giorni();
         this.aggiorna15Giorni();
-        this.aggiornaOfferte();
+       //  this.aggiornaOfferte();
         this.aggiornaTotale();
 
     },
