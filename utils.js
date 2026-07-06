@@ -78,9 +78,7 @@ const Utils = {
 
         );
 
-    }
-
-};
+},
  
 
     calcolaGiorni(dataString){
