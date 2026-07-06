@@ -1,4 +1,4 @@
-no// ============================================
+
 // SCADENZE SMART GDO 2.0
 // eventi.js
 // Gestione Eventi
