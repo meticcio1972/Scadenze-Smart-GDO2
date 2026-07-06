@@ -81,7 +81,7 @@ const Utils = {
     }
 
 };
-,
+
 
     calcolaGiorni(dataString){
 
