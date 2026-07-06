@@ -1,4 +1,4 @@
-// ============================================
+no// ============================================
 // SCADENZE SMART GDO 2.0
 // eventi.js
 // Gestione Eventi
@@ -156,3 +156,51 @@ const Eventi = {
     }
 
 };
+function mostraProdotti(lista) {
+
+    const contenuto = document.getElementById("contenuto");
+
+    if (!contenuto) return;
+
+    if (!lista || lista.length === 0) {
+
+        contenuto.innerHTML = "<p>Nessun dato caricato</p>";
+
+        return;
+
+    }
+
+    let html = `
+        <table class="tabella-prodotti">
+            <thead>
+                <tr>
+                    <th>Codice</th>
+                    <th>Descrizione</th>
+                    <th>Scadenza</th>
+                    <th>Giorni</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    lista.forEach(prodotto => {
+
+        html += `
+            <tr>
+                <td>${prodotto.codice}</td>
+                <td>${prodotto.descrizione}</td>
+                <td>${prodotto.scadenza}</td>
+                <td>${prodotto.giorni}</td>
+            </tr>
+        `;
+
+    });
+
+    html += `
+            </tbody>
+        </table>
+    `;
+
+    contenuto.innerHTML = html;
+
+}
