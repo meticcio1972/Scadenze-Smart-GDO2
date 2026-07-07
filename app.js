@@ -14,7 +14,13 @@ const App = {
             UI.caricamento("Avvio applicazione...");
 
             Storage.inizializza();
+            const prodottiSalvati = Storage.caricaProdotti();
 
+if (prodottiSalvati.length) {
+
+    Prodotti.carica(prodottiSalvati);
+
+}
             Sessione.datiCorrenti();
 
             await Supabase.inizializza();
