@@ -30,7 +30,7 @@ if (prodottiSalvati.length) {
 
             // Aggiorna dashboard
             Dashboard.aggiorna();
-
+            mostraProdotti(Prodotti.tutti());
             // Mostra Home
             UI.home();
 
