@@ -20,7 +20,7 @@ Prodotti.carica(prodottiSalvati);
 
             Sessione.datiCorrenti();
 
-          //  await Supabase.inizializza();
+          await Supabase.inizializza();
 
             // Attiva tutti gli eventi
             Eventi.inizializza();
