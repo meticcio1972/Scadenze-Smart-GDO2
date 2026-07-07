@@ -1,4 +1,4 @@
-mi// ============================================
+// ============================================
 // SCADENZE SMART GDO 2.0
 // storage.js
 // ============================================
@@ -7,41 +7,32 @@ mi// ============================================
 
 const Storage = {
 
-    // ==========================
-    // PRODOTTI
-    // ==========================
+    salvaProdotti(prodotti = []) {
 
-   salvaProdotti() {
-
-    localStorage.setItem(
-        "prodotti",
-        JSON.stringify(
-            Prodotti.tutti()
-        )
-    );
-
-} 
- salvaProdotti(prodotti = Prodotti.tutti()) {
-
-    localStorage.setItem(
-        "prodotti",
-        JSON.stringify(prodotti)
-    );
-
-}   caricaProdotti() {
-
-        const dati =
-            localStorage.getItem("prodotti");
-
-        if (!dati) return [];
-
-        return JSON.parse(dati);
+        localStorage.setItem(
+            "prodotti",
+            JSON.stringify(prodotti)
+        );
 
     },
 
-    // ==========================
-    // SCADENZE MODIFICATE
-    // ==========================
+    caricaProdotti() {
+
+        const dati = localStorage.getItem("prodotti");
+
+        if (!dati) return [];
+
+        try {
+
+            return JSON.parse(dati);
+
+        } catch {
+
+            return [];
+
+        }
+
+    },
 
     salvaScadenze(scadenze) {
 
@@ -54,144 +45,102 @@ const Storage = {
 
     caricaScadenze() {
 
-        const dati =
-            localStorage.getItem(
-                "scadenzeModificate"
-            );
+        return JSON.parse(
 
-        return dati
-            ? JSON.parse(dati)
-            : {};
+            localStorage.getItem("scadenzeModificate") ||
+
+            "{}"
+
+        );
 
     },
-
-    // ==========================
-    // STORICO
-    // ==========================
 
     salvaStorico(storico) {
 
         localStorage.setItem(
+
             "storicoModifiche",
+
             JSON.stringify(storico)
+
         );
 
     },
 
     caricaStorico() {
 
-        const dati =
-            localStorage.getItem(
-                "storicoModifiche"
-            );
+        return JSON.parse(
 
-        return dati
-            ? JSON.parse(dati)
-            : {};
+            localStorage.getItem("storicoModifiche") ||
+
+            "[]"
+
+        );
 
     },
-
-    // ==========================
-    // OFFERTE
-    // ==========================
 
     salvaOfferte(offerte) {
 
         localStorage.setItem(
+
             "offerte",
+
             JSON.stringify(offerte)
+
         );
 
     },
 
     caricaOfferte() {
 
-        const dati =
-            localStorage.getItem(
-                "offerte"
-            );
+        return JSON.parse(
 
-        return dati
-            ? JSON.parse(dati)
-            : [];
+            localStorage.getItem("offerte") ||
+
+            "[]"
+
+        );
 
     },
-
-    // ==========================
-    // REPARTO
-    // ==========================
 
     salvaReparto(reparto) {
 
         localStorage.setItem(
+
             "repartoAttivo",
+
             reparto
+
         );
 
     },
 
     caricaReparto() {
 
-        return localStorage.getItem(
-            "repartoAttivo"
-        ) || "macelleria";
+        return localStorage.getItem("repartoAttivo") ||
 
-    }
-,
+            "macelleria";
 
-    // ==========================
-    // INIZIALIZZA STORAGE
-    // ==========================
+    },
 
     inizializza() {
 
-        if (!localStorage.getItem("prodotti")) {
+        if (!localStorage.getItem("prodotti"))
 
-            localStorage.setItem(
+            this.salvaProdotti([]);
 
-                "prodotti",
+        if (!localStorage.getItem("offerte"))
 
-                JSON.stringify([])
+            this.salvaOfferte([]);
 
-            );
+        if (!localStorage.getItem("scadenzeModificate"))
 
-        }
+            this.salvaScadenze({});
 
-        if (!localStorage.getItem("offerte")) {
+        if (!localStorage.getItem("storicoModifiche"))
 
-            localStorage.setItem(
-
-                "offerte",
-
-                JSON.stringify([])
-
-            );
-
-        }
-
-        if (!localStorage.getItem("scadenzeModificate")) {
-
-            localStorage.setItem(
-
-                "scadenzeModificate",
-
-                JSON.stringify({})
-
-            );
-
-        }
-
-        if (!localStorage.getItem("storicoModifiche")) {
-
-            localStorage.setItem(
-
-                "storicoModifiche",
-
-                JSON.stringify([])
-
-            );
-
-        }
+            this.salvaStorico([]);
 
     }
+
 };
