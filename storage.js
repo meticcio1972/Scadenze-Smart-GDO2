@@ -119,7 +119,7 @@ const Storage = {
 
         return localStorage.getItem("repartoAttivo") ||
 
-            "macelleria";
+            "macelleria"; 
 
     },
 
