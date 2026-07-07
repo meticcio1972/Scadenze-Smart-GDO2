@@ -11,15 +11,24 @@ const Storage = {
     // PRODOTTI
     // ==========================
 
-    salvaProdotti(prodotti = Prodotti.tutti()) {
+   salvaProdotti() {
+
+    localStorage.setItem(
+        "prodotti",
+        JSON.stringify(
+            Prodotti.tutti()
+        )
+    );
+
+} 
+ salvaProdotti(prodotti = Prodotti.tutti()) {
 
     localStorage.setItem(
         "prodotti",
         JSON.stringify(prodotti)
     );
 
-}
-    caricaProdotti() {
+}   caricaProdotti() {
 
         const dati =
             localStorage.getItem("prodotti");
