@@ -1,4 +1,4 @@
-// ============================================
+mi// ============================================
 // SCADENZE SMART GDO 2.0
 // storage.js
 // ============================================
@@ -11,17 +11,14 @@ const Storage = {
     // PRODOTTI
     // ==========================
 
-    salvaProdotti() {
+    salvaProdotti(prodotti = Prodotti.tutti()) {
 
-        localStorage.setItem(
-            "prodotti",
-            JSON.stringify(
-                Prodotti.tutti()
-            )
-        );
+    localStorage.setItem(
+        "prodotti",
+        JSON.stringify(prodotti)
+    );
 
-    },
-
+}
     caricaProdotti() {
 
         const dati =
