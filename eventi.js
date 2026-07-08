@@ -4,7 +4,7 @@
 // Gestione Eventi
 // ============================================
 
-"use strict";
+"use strict"; 
 
 const Eventi = {
 
